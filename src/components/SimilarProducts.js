@@ -1,11 +1,15 @@
-import { StyleSheet, Text, View, TouchableOpacity, Image } from "react-native";
 import React from "react";
-import Products from '../data'
+import { StyleSheet, Text, View, TouchableOpacity, Image } from "react-native";
+import { useNavigation } from "@react-navigation/native";
+import { useSelector } from "react-redux";
 
-const SimilarProducts = () => {
+const SimilarProducts = ({itemType, id, scrollToTopHandler}) => {
+  const products = useSelector(state => state.products.products);
+  const navigation = useNavigation();
 
-
-  const similarproducts = Products.slice(1,4);
+  const similarproducts = products.filter(
+    item => item.type == itemType && item.id !== id,
+  );
 
   return (
     <View>

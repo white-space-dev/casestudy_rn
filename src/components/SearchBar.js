@@ -1,11 +1,17 @@
+import React from "react";
 import { StyleSheet, View, TextInput, Keyboard } from "react-native";
-import React, { useState } from "react";
 import FontAwesome from "react-native-vector-icons/FontAwesome";
-
+import { useDispatch, useSelector } from "react-redux";
+import { useNavigation } from "@react-navigation/native";
 
 const SearchBar = () => {
-  const [clicked, setClicked] = useState(false);
-  const [searchTerm, setSearchTerm] = useState("");
+  const searchTerm = useSelector((state) => state.searchTerm.searchTerm);
+  const clicked = useSelector((state) => state.searchTerm.clicked);
+  const dispatch = useDispatch();
+  const navigation = useNavigation();
+  const setSearchTerm = (text) => {
+    dispatch({ type: "SET_SEARCH_TERM", payload: text });
+  };
   return (
     <View style={styles.container}>
       <View
@@ -16,6 +22,10 @@ const SearchBar = () => {
           style={styles.input}
           value={searchTerm}
           onChangeText={setSearchTerm}
+          onFocus={() => {
+            dispatch({ type: "FOCUS_SEARCHBAR" });
+            navigation.navigate("Home");
+          }}
         />
         <FontAwesome name="search" size={15} style={styles.icon} />
       </View>
@@ -28,7 +38,7 @@ const SearchBar = () => {
             style={{ padding: 1 }}
             onPress={() => {
               Keyboard.dismiss();
-              setSearchTerm("");
+              dispatch({type:'CLEAR_SEARCH_TERM'});
             }}
           />
         </View>

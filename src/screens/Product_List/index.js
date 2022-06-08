@@ -1,21 +1,18 @@
-import React from "react";
-import {
-  StyleSheet,
-  Text,
-  View,
-  Image,
-  TouchableOpacity,
-} from "react-native";
+import React, { useEffect } from "react";
+import { StyleSheet, Text, View, Image, TouchableOpacity } from "react-native";
+import { useDispatch, useSelector } from "react-redux";
+import { useNavigation } from "@react-navigation/native";
 
 const ProductListView = (item) => {
-
   const { imageURL, title, price } = item.item || {};
+  const navigation = useNavigation();
+  const dispatch = useDispatch();
   return (
-    <View testID = 'ProductItem'>
+    <View>
       <TouchableOpacity
         onPress={(id) => {
           navigation.navigate("ProductPage", { id: item.item.id });
-          dispatch({type:'CLEAR_SEARCH_TERM'})
+          dispatch({ type: "CLEAR_SEARCH_TERM" });
         }}
       >
         <View style={styles.root}>

@@ -24,15 +24,14 @@ const Navbar = () => {
           onPress={() => navigation.navigate("Home")}
           style={styles.logo}
         >
-          <Text testID="LOGO" style={{ fontSize: 50, fontWeight: "bold", color: "black" }}>
+          <Text
+            testID="LOGO"
+            style={{ fontSize: 50, fontWeight: "bold", color: "black" }}
+          >
             LOGO
           </Text>
         </TouchableOpacity>
-        <TouchableOpacity
-          testID="AccountIcon"
-          onPress={() => navigation.navigate("Account")}
-          style={styles.account}
-        >
+        <TouchableOpacity testID="AccountIcon" style={styles.account}>
           <MaterialCommunityIcons size={30} name="account-circle" />
         </TouchableOpacity>
       </View>
