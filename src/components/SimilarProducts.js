@@ -6,7 +6,7 @@ const SimilarProducts = () => {
 
 
   const similarproducts = Products.slice(1,4);
-  console.log(similarproducts)
+
   return (
     <View>
       <Text style={styles.similarProducts}>SEE MORE PRODUCTS</Text>

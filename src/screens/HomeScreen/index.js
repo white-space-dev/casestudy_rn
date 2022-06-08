@@ -1,15 +1,12 @@
 import { StyleSheet, View, FlatList, ActivityIndicator } from "react-native";
-import Navbar from '../../components/Navbar'
-import SearchBar from '../../components/SearchBar'
-import ProductListView from "../Product_List/ProductListScreen";
+
+import ProductListView from "../Product_List";
 import Products from '../../data'
-import ProductItem from "../Product_detail/Product_Page";
+import ProductItem from "../Product_detail";
 
 const HomeScreen = () => {
   return (
     <View>
-      <Navbar />  
-      <SearchBar /> 
       <ProductItem item = {Products[0]}/>
     </View>
   );

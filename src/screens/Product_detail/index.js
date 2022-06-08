@@ -1,23 +1,20 @@
-import {
-  StyleSheet,
-  Text,
-  View,
-  Image,
-  ScrollView,
-} from "react-native";
+import { StyleSheet, Text, View, Image, ScrollView } from "react-native";
 
 import React from "react";
 import SimilarProducts from "../../components/SimilarProducts";
 
-// import SimilarProducts from "../../components/SimilarProducts";
-
-
-
-
-const ProductItem = ({item}) => {
-  const {title, price, imageURL, description, colors_available, sizes_available} = item
+const ProductItem = ({ item }) => {
+  const {
+    title,
+    price,
+    imageURL,
+    description,
+    colors_available,
+    sizes_available,
+  } = item;
+  
   return (
-    <View style={{ backgroundColor: "white"}}>
+    <View style={{ backgroundColor: "white" }}>
       <ScrollView>
         <View style={styles.productContainer}>
           <Image style={styles.productImage} source={{ uri: imageURL }} />
@@ -25,7 +22,6 @@ const ProductItem = ({item}) => {
             {title}
           </Text>
           <Text style={{ marginBottom: 20 }}>AED {price}</Text>
-
 
           <View style={{ flexDirection: "row" }}>
             <Text>
@@ -46,7 +42,8 @@ const ProductItem = ({item}) => {
             ))}
           </View>
           <View style={styles.blankspace} />
-          <Text style={{ fontWeight: "bold", fontSize: 15, marginVertical: 15 }}
+          <Text
+            style={{ fontWeight: "bold", fontSize: 15, marginVertical: 15 }}
           >
             DESCRIPTION
           </Text>
@@ -74,8 +71,7 @@ export default ProductItem;
 
 const styles = StyleSheet.create({
   productContainer: {
-    // width: '200%',
-    height: 1650,
+    // height: 1650,
     flexDirection: "column",
     justifyContent: "flex-start",
     padding: 20,
