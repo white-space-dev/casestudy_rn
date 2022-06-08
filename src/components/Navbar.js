@@ -8,9 +8,11 @@ import {
 import React from "react";
 import { useNavigation } from "@react-navigation/native";
 import MaterialCommunityIcons from "react-native-vector-icons/MaterialCommunityIcons";
+import { useDispatch } from "react-redux";
 
 const Navbar = () => {
   const navigation = useNavigation();
+  const dispatch = useDispatch();
   return (
     <SafeAreaView testID="NavBar">
       <View
@@ -31,16 +33,16 @@ const Navbar = () => {
             LOGO
           </Text>
         </TouchableOpacity>
-        <TouchableOpacity testID="AccountIcon" style={styles.account}>
+        <TouchableOpacity
+          testID="AccountIcon"
+          onPress={() => navigation.navigate("Account")}
+          style={styles.account}
+        >
           <MaterialCommunityIcons size={30} name="account-circle" />
         </TouchableOpacity>
       </View>
       <View style={styles.navbar}>
-        <TouchableOpacity
-          onPress={() => {
-            navigation.navigate("Men");
-          }}
-        >
+        <TouchableOpacity onPress={() => navigation.navigate("Men")}>
           <Text>MEN</Text>
         </TouchableOpacity>
         <TouchableOpacity onPress={() => navigation.navigate("Women")}>

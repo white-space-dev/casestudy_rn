@@ -34,6 +34,7 @@ const HomeScreen = (props) => {
 
   useEffect(() => {                                  
     dispatch({ type: GET_PRODUCTS_REQUEST });
+    dispatch({ type: FETCH_USER_REQUEST });
   }, []);
 
   return (
