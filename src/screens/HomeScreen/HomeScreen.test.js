@@ -5,7 +5,7 @@
 
 
 import React from "react";
-import { fireEvent, render, waitFor, debug } from "@testing-library/react-native";
+import { fireEvent, render, waitFor, act } from "@testing-library/react-native";
 
 import App from "../../../App";
 import ProductListView from "../Product_List";
@@ -25,7 +25,7 @@ describe("HomeScreen", () => {
   }),
     it("should go to account screen and display image and name on pressing Account button", () => {
       const page = render(<App />);
-      fireEvent.press(page.getByTestId("AccountIcon"))
+      act (() => fireEvent.press(page.getByTestId("AccountIcon")))
       expect(page.queryAllByTestId("ProfileImage").length).toBe(1)
       expect(page.queryAllByTestId("ProfileName").length).toBe(1)
   }),
