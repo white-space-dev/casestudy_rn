@@ -1,3 +1,4 @@
+import React from "react";
 import {
   StyleSheet,
   Text,
@@ -5,14 +6,13 @@ import {
   TouchableOpacity,
   SafeAreaView,
 } from "react-native";
-import React from "react";
 import { useNavigation } from "@react-navigation/native";
 import MaterialCommunityIcons from "react-native-vector-icons/MaterialCommunityIcons";
 import { useDispatch } from "react-redux";
 
 const Navbar = () => {
   const navigation = useNavigation();
-  const dispatch = useDispatch();
+  const dispatch = useDispatch()
   return (
     <SafeAreaView testID="NavBar">
       <View
@@ -23,11 +23,14 @@ const Navbar = () => {
         }}
       >
         <TouchableOpacity
-          onPress={() => navigation.navigate("Home")}
+        testID="LOGO"
+          onPress={() => {
+            navigation.navigate("Home")
+            dispatch({type:'CLEAR_SEARCH_TERM'})
+        }}
           style={styles.logo}
         >
           <Text
-            testID="LOGO"
             style={{ fontSize: 50, fontWeight: "bold", color: "black" }}
           >
             LOGO

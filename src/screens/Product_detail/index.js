@@ -14,7 +14,7 @@ const ProductItem = () => {
   const products = useSelector((state) => state.products.products);
   const product = products.filter((item) => item.id == id); //filtering out the product corresponding to the ID into an array
   const item = Object.assign({}, ...product); // converting an array to an object
-  
+
   //destructuring the parameters
   const {
     imageURL,
@@ -32,12 +32,12 @@ const ProductItem = () => {
   const ref = React.useRef();
   return (
     <View
-      textID="ProductDetail"
+      testID="ProductDetail"
       style={{ backgroundColor: "white", height: "100%" }}
     >
       <ScrollView ref={ref}>
         <View style={styles.productContainer}>
-          <Image style={styles.productImage} source={{ uri: imageURL }} />
+          <Image testID="ProductDetImage" style={styles.productImage} source={{ uri: imageURL }} />
           <Text style={{ fontWeight: "bold", fontSize: 20, marginVertical: 5 }}>
             {title}
           </Text>

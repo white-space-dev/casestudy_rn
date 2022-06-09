@@ -12,7 +12,7 @@ const AccountScreen = () => {
         <View style={{alignItems: 'center' , margin: 50, height: 400}}>
           <Text style={styles.name}>AccountScreen</Text>
           <Image testID='ProfileImage'  source={{uri:user.image}} style={styles.profileImage}/>
-          <Text style={[styles.name, {textDecorationLine:'underline'}]}>{user.name}</Text>
+          <Text testID='ProfileName' style={[styles.name, {textDecorationLine:'underline'}]}>{user.name}</Text>
         </View>
 
       </View>

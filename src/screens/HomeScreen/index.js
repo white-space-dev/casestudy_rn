@@ -43,11 +43,13 @@ const HomeScreen = (props) => {
     {isloading ? (
       <ActivityIndicator testID="Indicator" size={'large'}/>
     ) : (
+      <View testID="FlatListView">
       <FlatList
         testID="FlatList"
         data={filteredProducts}
         renderItem={({ item }) => <ProductListView item={item} />}
       />
+      </View>
     )}
   </View>
 );

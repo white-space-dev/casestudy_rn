@@ -5,7 +5,7 @@ import {
   API_PRODUCTS_SUCCESS,
   API_PRODUCTS_ERROR
 } from "../actions/actionTypes";
-import getProductsApi from "../api/productAPI";
+import getProductsApi from "../../services/api/productAPI";
 
 export function* getProducts() {
   try {

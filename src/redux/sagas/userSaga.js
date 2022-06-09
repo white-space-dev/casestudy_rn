@@ -5,7 +5,7 @@ import {
   API_USER_SUCCESS,
   API_USER_ERROR
 } from "../actions/actionTypes";
-import getUserApi from "../api/userAPI";
+import getUserApi from "../../services/api/userAPI";
 
 export function* getUser() {
   try {

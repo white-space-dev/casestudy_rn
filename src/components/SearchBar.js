@@ -13,7 +13,7 @@ const SearchBar = () => {
     dispatch({ type: "SET_SEARCH_TERM", payload: text });
   };
   return (
-    <View style={styles.container}>
+    <View testID="SearchBar" style={styles.container}>
       <View
         style={clicked ? styles.searchBar_clicked : styles.searchBar_unclicked}
       >

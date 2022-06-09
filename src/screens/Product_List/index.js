@@ -8,7 +8,7 @@ const ProductListView = (item) => {
   const navigation = useNavigation();
   const dispatch = useDispatch();
   return (
-    <View>
+    <View testID = "ProductItem">
       <TouchableOpacity
         onPress={(id) => {
           navigation.navigate("ProductPage", { id: item.item.id });
@@ -16,7 +16,7 @@ const ProductListView = (item) => {
         }}
       >
         <View style={styles.root}>
-          <Image
+          <Image testID="ListImage"
             style={styles.image}
             source={{
               uri: imageURL,
