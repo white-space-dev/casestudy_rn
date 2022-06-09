@@ -41,7 +41,7 @@ const HomeScreen = (props) => {
     <View style={{ backgroundColor: "white" }}>
 
     {isloading ? (
-      <ActivityIndicator testID="Indicator" size={'large'}/>
+      <ActivityIndicator testID="Indicator" size={'large'} style={styles.loadingIndicator}/>
     ) : (
       <View testID="FlatListView">
       <FlatList
@@ -58,7 +58,8 @@ const HomeScreen = (props) => {
 export default HomeScreen;
 
 const styles = StyleSheet.create({
-  loadingText: {
+  loadingIndicator: {
+    height:1000,
     justifyContent: "center",
     alignContent: "center",
   },
